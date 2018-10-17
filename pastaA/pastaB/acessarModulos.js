@@ -7,6 +7,9 @@ console.log(saudacao.ola)
 const c = require('./pastaC') // index é padrão, por isso já chama
 console.log(c.ola2)
 
+const abraco = require('./pastaC/abraco')
+console.log(abraco.abraco)
+
 const http = require('http') // apenas botei o caminho relativo
 http.createServer((req, res) => { // função callback - requisição e resposta
     res.write('Bom dia!') // escreva

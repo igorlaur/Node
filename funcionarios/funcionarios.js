@@ -1,7 +1,7 @@
 const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json'
 const axios = require('axios') // axios vai pegar o arquivo do servidor para nós trabalharmos aqui no vscode
 
-const chineses = f => f.pais === 'China'
+const russas = f => f.pais === 'Russia'
 const mulheres = f => f.genero === 'F'
 const menorSalario = (func, funcAtual) => {
     return func.salario < funcAtual.salario ? func : funcAtual // Esse salário é menor do que o salário do funcionário atual? Se sim, então troca, bota o atual para ser funcionario com menor salário
@@ -13,7 +13,7 @@ axios.get(url).then(response => { // Obtém informação do servidor. Faremos re
 
     // mulher chinesa com menor salário?
     const func = funcionarios
-        .filter(chineses)
+        .filter(russas)
         .filter(mulheres)
         .reduce(menorSalario)
 
